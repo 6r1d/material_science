@@ -52,6 +52,14 @@ if have_technic and technic.register_recipe_type then
 		output="technic:wrought_iron_dust",
 		time = 3
 	})
+	-- Carbothermal reduction of silicon
+	technic.register_alloy_recipe({
+		input = {
+				"material_science:silicon_dioxide_dust", "technic:coal_dust"
+		},
+		output="material_science:silicon_dust",
+		time = 9
+	})
 end
 
 
