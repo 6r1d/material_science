@@ -33,9 +33,12 @@ for item, _ in pairs( items ) do
     item_counter = item_counter + 1
     remainder = remainder - items[item]
 end
-for item, _ in pairs( items ) do
-    items[item] = items[item] + remainder / item_counter
-end
+-- Gives players only registered stuff, survival-style
+items[""] = remainder
+-- Gives players more stuff :-)
+-- for item, _ in pairs( items ) do
+--     items[item] = items[item] + remainder / item_counter
+-- end
 
 function get_random_item()
 	-- Update random seed
