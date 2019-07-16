@@ -10,19 +10,35 @@ minetest.register_craftitem("material_science:alumina_dust", {
 	inventory_image = "alumina_dust.png",
 })
 
--- TODO aluminium fluoride dust
--- TODO aluminium bar
--- TODO aluminium block
--- TODO sapphire
--- TODO ruby
+-- Aluminium bar
+minetest.register_craftitem("material_science:aluminium_bar", {
+	description = "Aluminium bar",
+	inventory_image = "aluminium_bar.png",
+})
+
+-- Unprocessed cryolite
+minetest.register_craftitem("material_science:unprocessed_cryolite", {
+	description = "Unprocessed cryolite dust",
+	inventory_image = "unprocessed_cryolite.png",
+})
+
+-- Cryolite dust
+minetest.register_craftitem("material_science:cryolite_dust", {
+	description = "Cryolite dust",
+	inventory_image = "cryolite_dust.png",
+})
+
+-- CaF2 dust
+minetest.register_craftitem("material_science:fluorite_dust", {
+	description = "Fluorite dust",
+	inventory_image = "fluorite_dust.png",
+})
 
 -- Silicon dioxide, essentially glass / quartz dust
 minetest.register_craftitem("material_science:silicon_dioxide_dust", {
 	description = "Silicon dioxide dust",
 	inventory_image = "sio2_dust.png",
 })
--- TODO good, transparent glass block, based solely on it
--- TODO obsidian block crafting
 
 -- Silicon, requires an alloy furnace for carbothermal reduction
 minetest.register_craftitem("material_science:silicon_dust", {
@@ -47,7 +63,6 @@ minetest.register_craftitem("material_science:magnesium_dust", {
 	inventory_image = "magnesium_dust.png",
 })
 
--- TODO electric furnace processing recipe to get Na from NaOH
 minetest.register_craftitem("material_science:lye", {
 	description = "Lye (sodium hydroxide)",
 	inventory_image = "lye.png",
@@ -90,7 +105,6 @@ minetest.register_craftitem("material_science:phosphorus_bar", {
 })
 
 -- A block of phosphorus, crafted from bars
--- TODO should glow
 minetest.register_craftitem("material_science:phosphorus_block", {
 	description = "Phosphorus block",
 	inventory_image = "phosphorus_block.png",

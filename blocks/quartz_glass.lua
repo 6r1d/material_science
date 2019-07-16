@@ -5,7 +5,7 @@ minetest.register_node("material_science:quartz_glass", {
   drawtype = "glasslike",
 	alpha = 200,
 	inventory_image = "glass_cube.png",
-	wield_image = "glass_cube.png",
+	wield_image = "glass_inv.png",
 	tiles = {"quartz_glass.png"},
   paramtype = "light",
   sunlight_propagates = true,

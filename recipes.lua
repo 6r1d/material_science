@@ -8,6 +8,40 @@ minetest.register_craft({
 	recipe = "material_science:silicon_dioxide_dust",
 })
 
+-- Unprocessed cryolite, the process I meant is making the sulfuric acid,
+-- mixing it with fluorite, processing alumina dust with hydrogen fluoride
+-- (not sure if it actually works)
+minetest.register_craft({
+	output = 'material_science:unprocessed_cryolite',
+	recipe = {
+		{'bucket:bucket_water', 'technic:sulfur_dust'},
+		{'material_science:fluorite_dust', 'material_science:alumina_dust'}
+	}
+})
+
+minetest.register_craft({
+	type = "cooking",
+	output = "material_science:cryolite_dust",
+	recipe = "material_science:unprocessed_cryolite",
+})
+
+-- Make an aluminium bar
+minetest.register_craft({
+	type = "cooking",
+	output = "material_science:aluminium_bar",
+	recipe = "material_science:aluminium_dust",
+})
+
+-- Aluminium blocks
+minetest.register_craft({
+	output = 'material_science:aluminium_block',
+	recipe = {
+		{'material_science:aluminium_bar', 'material_science:aluminium_bar', 'material_science:aluminium_bar'},
+		{'material_science:aluminium_bar', 'material_science:aluminium_bar', 'material_science:aluminium_bar'},
+		{'material_science:aluminium_bar', 'material_science:aluminium_bar', 'material_science:aluminium_bar'},
+	}
+})
+
 -- Makes lye from sodium
 -- TODO add sides
 minetest.register_craft({
@@ -59,6 +93,16 @@ if have_technic and technic.register_recipe_type then
 		},
 		output="material_science:silicon_dust",
 		time = 9
+	})
+	-- Aluminium preparation
+	technic.register_alloy_recipe({
+		input = {
+				"material_science:cryolite_dust", "material_science:alumina_dust"
+		},
+		output={
+				"material_science:cryolite_dust", "material_science:aluminium_dust"
+		},
+		time = 3
 	})
 end
 
