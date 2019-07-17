@@ -71,24 +71,24 @@ end
 local function decomposer_recharge(pos)
 	local meta = minetest.get_meta(pos)
 	local inv = meta:get_inventory()
-	local charge = tonumber(meta:get_string("charge"))
-	if inv:contains_item("src", item_req) and charge < item_amount then
+	local dust_content = tonumber(meta:get_string("dust_content"))
+	if inv:contains_item("src", item_req) and dust_content < item_amount then
 			inv:remove_item("src", item_req)
-			charge = charge + item_amount
-			meta:set_string("charge", tostring(charge))
+			dust_content = dust_content + item_amount
+			meta:set_string("dust_content", tostring(dust_content))
 	end
 end
 
 local function decomposer_process(pos)
 	local meta = minetest.get_meta(pos)
 	local inv = meta:get_inventory()
-	local charge = tonumber(meta:get_string("charge"))
+	local dust_content = tonumber(meta:get_string("dust_content"))
   local input = meta:get_int("HV_EU_input")
   local demand = meta:get_int("HV_EU_demand")
   -- Give players stuff when we have stuff AND energy to give items
-  if charge > 0 and input >= demand then
-    charge = charge - 1
-    meta:set_string("charge", tostring(charge))
+  if dust_content > 0 and input >= demand then
+    dust_content = dust_content - 1
+    meta:set_string("dust_content", tostring(dust_content))
     item = get_random_item()
     if string.len(item) >= 1 then
       inv:add_item("dst", item)
@@ -101,8 +101,8 @@ end
 -- 	local meta = minetest.get_meta(pos)
 -- 	decomposer_recharge(pos)
 -- 	decomposer_process(pos)
--- 	local charge = tonumber(meta:get_string("charge"))
--- 	return charge > 0
+-- 	local dust_content = tonumber(meta:get_string("dust_content"))
+-- 	return dust_content > 0
 -- end
 
 function get_decomposer_formspec()
@@ -126,10 +126,10 @@ end
 
 local function run(pos, node)
   local meta = minetest.get_meta(pos)
-  local charge = tonumber(meta:get_string("charge"))
+  local dust_content = tonumber(meta:get_string("dust_content"))
   -- Set demand depending on contained source material
-  if charge > 0 then
-    power_requirement = 12000
+  if dust_content > 0 then
+    power_requirement = 100000
   else
     power_requirement = 0
   end
@@ -184,7 +184,7 @@ minetest.register_node("material_science:decomposer", {
 		local meta = minetest.get_meta(pos)
 		meta:set_string("formspec", get_decomposer_formspec())
 		meta:set_string("infotext", "Material decomposer")
-		meta:set_string("charge", "0")
+		meta:set_string("dust_content", "0")
 		local inv = meta:get_inventory()
 		inv:set_size('src', 8)
 		inv:set_size('dst', 8)
