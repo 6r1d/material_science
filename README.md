@@ -75,3 +75,9 @@ Any advices about blocks using new elements (or old, too) are welcome. For insta
 - [ ] Ball-mill with heating and gas inputs
 - [ ] Transparent ceramics
 - [ ] By-product exhaust system
+
+# Dependencies
+
+- moreblocks
+- technic
+- pipeworks
