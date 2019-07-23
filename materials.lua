@@ -1,7 +1,79 @@
+-- Paints
+minetest.register_craftitem("material_science:black_paint", {
+	description = "Black paint",
+	inventory_image = "black_paint.png",
+})
+minetest.register_craftitem("material_science:blue_paint", {
+	description = "Blue paint",
+	inventory_image = "blue_paint.png",
+})
+minetest.register_craftitem("material_science:brown_paint", {
+	description = "Brown paint",
+	inventory_image = "brown_paint.png",
+})
+minetest.register_craftitem("material_science:cyan_paint", {
+	description = "Cyan paint",
+	inventory_image = "cyan_paint.png",
+})
+minetest.register_craftitem("material_science:dark_green_paint", {
+	description = "Dark green paint",
+	inventory_image = "dark_green_paint.png",
+})
+minetest.register_craftitem("material_science:dark_grey_paint", {
+	description = "Dark grey paint",
+	inventory_image = "dark_grey_paint.png",
+})
+minetest.register_craftitem("material_science:green_paint", {
+	description = "Green paint",
+	inventory_image = "green_paint.png",
+})
+minetest.register_craftitem("material_science:grey_paint", {
+	description = "Grey paint",
+	inventory_image = "grey_paint.png",
+})
+minetest.register_craftitem("material_science:black_paint", {
+	description = "Black paint",
+	inventory_image = "black_paint.png",
+})
+minetest.register_craftitem("material_science:magenta_paint", {
+	description = "Magenta paint",
+	inventory_image = "magenta_paint.png",
+})
+minetest.register_craftitem("material_science:orange_paint", {
+	description = "Orange paint",
+	inventory_image = "orange_paint.png",
+})
+minetest.register_craftitem("material_science:pink_paint", {
+	description = "Pink paint",
+	inventory_image = "pink_paint.png",
+})
+minetest.register_craftitem("material_science:red_paint", {
+	description = "Red paint",
+	inventory_image = "red_paint.png",
+})
+minetest.register_craftitem("material_science:violet_paint", {
+	description = "Violet paint",
+	inventory_image = "violet_paint.png",
+})
+minetest.register_craftitem("material_science:white_paint", {
+	description = "White paint",
+	inventory_image = "white_paint.png",
+})
+minetest.register_craftitem("material_science:yellow_paint", {
+	description = "Yellow paint",
+	inventory_image = "yellow_paint.png",
+})
+
 -- Elemental aluminium dust
 minetest.register_craftitem("material_science:aluminium_dust", {
 	description = "Aluminium dust",
 	inventory_image = "aluminium_dust.png",
+})
+
+-- Granules of aluminium, non-combustible
+minetest.register_craftitem("material_science:aluminium_granules", {
+	description = "Aluminium granules",
+	inventory_image = "aluminium_granules.png",
 })
 
 -- Al2O3 dust
