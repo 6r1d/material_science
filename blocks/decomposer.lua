@@ -120,6 +120,7 @@ function get_decomposer_formspec()
 		"listring[current_player;main]"
 end
 
+-- TODO check if needed
 local function after_inventory_change(pos)
 	minetest.get_node_timer(pos):start(1.0)
 end
