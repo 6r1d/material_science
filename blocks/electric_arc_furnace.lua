@@ -1,0 +1,3 @@
+-- TODO electric arc furnace recipes
+-- technic.register_recipe_type("grinding", { description = S("Grinding") })
+-- https://github.com/minetest-mods/technic/blob/e1a71a8fb0bf052358cdb6b197a5bf5b20341205/technic/machines/register/grinder_recipes.lua
