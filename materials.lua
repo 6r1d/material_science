@@ -64,6 +64,12 @@ minetest.register_craftitem("material_science:yellow_paint", {
 	inventory_image = "yellow_paint.png",
 })
 
+-- Wet alumina
+minetest.register_craftitem("material_science:wet_alumina", {
+	description = "Wet alumina",
+	inventory_image = "wet_alumina.png",
+})
+
 -- Elemental aluminium dust
 minetest.register_craftitem("material_science:aluminium_dust", {
 	description = "Aluminium dust",

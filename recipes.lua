@@ -1,6 +1,27 @@
 -- Look up craft examples there:
 -- https://github.com/minetest/minetest/blob/b298b0339c79db7f5b3873e73ff9ea0130f05a8a/games/minimal/mods/default/init.lua
 
+minetest.register_craft({
+	output = 'material_science:wet_alumina 8',
+	recipe = {
+		{'material_science:alumina_dust', 'material_science:alumina_dust', 'material_science:alumina_dust'},
+		{'material_science:alumina_dust', 'default:ice', 'material_science:alumina_dust'},
+		{'material_science:alumina_dust', 'material_science:alumina_dust', 'material_science:alumina_dust'},
+	}
+})
+
+minetest.register_craft({
+	output = 'material_science:wet_alumina 8',
+	recipe = {
+		{'material_science:alumina_dust', 'material_science:alumina_dust', 'material_science:alumina_dust'},
+		{'material_science:alumina_dust', 'bucket:bucket_water', 'material_science:alumina_dust'},
+		{'material_science:alumina_dust', 'material_science:alumina_dust', 'material_science:alumina_dust'},
+	},
+	replacements = {
+		{"bucket:bucket_water", "bucket:bucket_empty"}
+	}
+})
+
 -- Make a glass from SiO2 dust
 minetest.register_craft({
 	type = "cooking",
@@ -29,7 +50,7 @@ minetest.register_craft({
 minetest.register_craft({
 	type = "cooking",
 	output = "material_science:aluminium_bar",
-	recipe = "material_science:aluminium_dust",
+	recipe = "material_science:aluminium_granules",
 })
 
 -- Aluminium blocks
@@ -78,7 +99,22 @@ minetest.register_craft({
 
 technic = rawget(_G, "technic") or {}
 local have_technic = minetest.get_modpath("technic")
+local have_charcoal = minetest.get_modpath("charcoal")
 if have_technic and technic.register_recipe_type then
+	-- Charcoal to coal dust
+	if have_charcoal then
+		technic.register_grinder_recipe({
+			input = {"charcoal:charcoal_lump"},
+			output = "technic:coal_dust 1"
+		})
+	end
+	-- Making obsidian shards
+	technic.register_alloy_recipe({
+		input = {"default:flint", "technic:coal_dust"},
+		output="default:obsidian_shard",
+		time = 3
+	})
+	-- Smelting iron
 	technic.register_alloy_recipe({
 		input = {
 				"material_science:rust", "technic:coal_dust"
@@ -100,14 +136,8 @@ if have_technic and technic.register_recipe_type then
 				"material_science:cryolite_dust", "material_science:alumina_dust"
 		},
 		output={
-				"material_science:cryolite_dust", "material_science:aluminium_dust"
+				"material_science:cryolite_dust", "material_science:aluminium_granules"
 		},
 		time = 3
 	})
 end
-
-
-
--- TODO electric arc furnace recipes
--- technic.register_recipe_type("grinding", { description = S("Grinding") })
--- https://github.com/minetest-mods/technic/blob/e1a71a8fb0bf052358cdb6b197a5bf5b20341205/technic/machines/register/grinder_recipes.lua
