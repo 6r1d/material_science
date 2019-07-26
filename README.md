@@ -36,32 +36,56 @@ Any advices about blocks using new elements (or old, too) are welcome. For insta
 
 # TODO
 
-- [ ] Coal dust from charcoal
+- [x] Coal dust from charcoal
 - [x] Electricity requirement for a `decomposer` block
 - [x] Way to convert alumina to aluminium
-- [ ] Aluminium grains instead of dust (dust actually is very combustible)
-- [ ] Aluminium blocks
+- [x] Aluminium granules instead of dust (dust actually is very combustible)
+- [x] Quartz glass
+- - [x] Wield image
+- - [x] Inventory image
+- - [x] Glass sounds
+- [x] Aluminium blocks
+- - [x] Move aluminium block configs into a separate file
+- - [x] Saw / CNC support for aluminium
+- - - [x] Saw support for colored aluminium
+- - - [ ] Better textures
+- - - [ ] Config to enable / disable aluminium blocks (color, saw, cnc)
 - [ ] Aluminium dyeing unit
-- [ ] Saw / CNC support for aluminium
+- - [ ] Electrochemical anodizing requirement (sulfuric acid)
+- [x] Wet alumina
+- - [ ] Alumina case (a case for lasers and stuff)
+- - [ ] Alumina balls
+- - [ ] Unbaked alumina balls
+- - [ ] Unbaked alumina case
+- [x] Phosphorus block
+- - [ ] Labels when digging a charged block
 - [ ] Phosphorus glass
-- [ ] Ball mill
+- - [ ] Labels when digging a charged block
+- [ ] [Add sounds](https://freesound.org/browse/tags/sound-effects/)
+- [ ] Phosphorus glass
+- [ ] Silicon block
+- - [ ] Silicon block processor
 - [ ] Alkali metal extractor (NaOH to Na using electricity)
-- [ ] Sounds for existing blocks
+- [ ] Ball mill
 - [ ] Fluoropolymers
 - [ ] Gas tubes
 - [ ] Gas extraction furnace (makes hydrogen fluoride and by-products)
 - [ ] Gas compressor
-- [ ] Fluorine bottle
-- [ ] Hydrogen bottle
+- [ ] Fluorine cylinder
+- [ ] Hydrogen cylinder
 - [ ] Exhaust tubes
 - [ ] Block, separating water to hydrogen and oxygen
 - [ ] Toxic gas leaks
+- [ ] Acids
+- - [ ] Sand to SiO2
 - [ ] Gas chemistry (get chlorine by applying electricity to the salt, then NaOH)
 - - [ ] Aluminium furnace with fluorine input (The majority of aluminium fluoride is produced by treating alumina with hydrogen fluoride gas at 700 °C)
 - [ ] [Verneuil process furnace](https://en.wikipedia.org/wiki/Verneuil_process)
 - - [ ] Sapphires
 - - [ ] Rubies
-- [ ] Cellulose (pulp-bleaching by chlorine)
+- [ ] Tree pulp
+- - [ ] Cellulose (pulp-bleaching by chlorine)
+- - - [ ] Cellulose-based paper
 - [ ] Burning cellulose to coal dust
 - [ ] Oil vacuum pump
 - [ ] Electric arc furnace (graphite rods + HV)
@@ -70,14 +94,21 @@ Any advices about blocks using new elements (or old, too) are welcome. For insta
 - [ ] Turbomolecular pump
 - [ ] Zone melting furnace
 - [ ] Better ways to obtain aluminium (http://www.popadancev.net/poluchenie-alyuminiya/)
-- [ ] Obsidian block crafting
 - [ ] Fireworks
 - [ ] Ball-mill with heating and gas inputs
+- [ ] Add a mix of aluminium granules and coal dust for safe grinding
+- [x] Obsidian shard making (use nine flints, some coal dust and alloy furnace?)
+- - [ ] Make switchable
 - [ ] Transparent ceramics
 - [ ] By-product exhaust system
+- [ ] Femtosecond laser coloring ([Chunlei Guo](http://www2.optics.rochester.edu/workgroups/guo/publications.html))
+- [ ] Bucket charger
+- [ ] Explaination dialog for decomposer, coating machine, etc.
 
 # Dependencies
 
 - moreblocks
-- technic
+- mesecons
 - pipeworks
+- technic
+- charcoal
