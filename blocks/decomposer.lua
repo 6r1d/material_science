@@ -4,8 +4,9 @@ local load_time_start = minetest.get_us_time()
 -- TODO support more material types
 
 -- Amount of source material required to start processing
-local item_amount = 5
-local item_req = "technic:stone_dust " .. tostring(item_amount)
+local item_req = "technic:stone_dust " .. tostring(
+  material_science.decomposer_item_requirement
+)
 
 -- Init weights
 local items = {}
@@ -72,9 +73,9 @@ local function decomposer_recharge(pos)
 	local meta = minetest.get_meta(pos)
 	local inv = meta:get_inventory()
 	local dust_content = tonumber(meta:get_string("dust_content"))
-	if inv:contains_item("src", item_req) and dust_content < item_amount then
+	if inv:contains_item("src", item_req) and dust_content < material_science.decomposer_item_requirement then
 			inv:remove_item("src", item_req)
-			dust_content = dust_content + item_amount
+			dust_content = dust_content + material_science.decomposer_item_requirement
 			meta:set_string("dust_content", tostring(dust_content))
 	end
 end
@@ -130,7 +131,7 @@ local function run(pos, node)
   local dust_content = tonumber(meta:get_string("dust_content"))
   -- Set demand depending on contained source material
   if dust_content > 0 then
-    power_requirement = 100000
+    power_requirement = material_science.decomposer_power_requirement
   else
     power_requirement = 0
   end
@@ -177,7 +178,8 @@ minetest.register_node("material_science:decomposer", {
 
 	sounds = default.node_sound_metal_defaults(),
 
-	on_timer = decomposer_node_timer,
+  -- TODO
+	-- on_timer = decomposer_node_timer,
 
 	can_dig = can_dig,
 
