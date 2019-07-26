@@ -40,16 +40,15 @@ local function phosphorus_node_timer(pos, elapsed)
 	return true
 end
 
--- TODO sounds
 for brightness_level = 0, 14 do
 		minetest.register_node("material_science:phosphorus_block_"..brightness_level, {
-				description = "Phosphorus block",
+				description = "Phosphorus block ("..tostring(brightness_level)..")",
 				light_source = brightness_level,
 				tiles = {"phosphorus_block.png"},
 			  paramtype = "light",
 				is_ground_content = false,
 				groups = {cracky = 3, oddly_breakable_by_hand = 3},
-				-- sounds = default.node_sound_glass_defaults(),
+				sounds = default.node_sound_glass_defaults(),
 				on_timer = phosphorus_node_timer,
 				after_place_node = function(pos, placer, itemstack, pointed_thing)
 					local meta = minetest.get_meta(pos)
