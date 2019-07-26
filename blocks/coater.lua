@@ -102,15 +102,13 @@ minetest.register_node("material_science:e_coater", {
 
 	sounds = default.node_sound_metal_defaults(),
 
-	on_timer = decomposer_node_timer,
-
 	can_dig = can_dig,
 
 	on_construct = function(pos)
 		local meta = minetest.get_meta(pos)
 
     -- meta:set_string("formspec", get_decomposer_formspec())
-		-- meta:set_string("infotext", "Material decomposer")
+		meta:set_string("infotext", "Aluminium paint coater")
 		-- meta:set_string("dust_content", "0")
 
     local inv = meta:get_inventory()
